@@ -62,13 +62,15 @@ const displayDetails = details => {
                 <p><span>Display</span>: ${details.mainFeatures.displaySize}</p>
                 <p><span>Memory</span>: ${details.mainFeatures.memory}</p>
                 <p><span>Sensor</span>: ${details.mainFeatures.sensors[0]}, ${details.mainFeatures.sensors[1]}, ${details.mainFeatures.sensors[2]}, ${details.mainFeatures.sensors[3]}, ${details.mainFeatures.sensors[4]}, ${details.mainFeatures.sensors[5]},</p>
-                <p><span>Bluetooth</span>: ${details.others.Bluetooth}</p>
-                <p><span>GPS</span>: ${details.others.GPS}</p>
-                <p><span>NFC</span>: ${details.others.NFC}</p>
-                <p><span>Radio</span>: ${details.others.Radio}</p>
-                <p><span>USB</span>: ${details.others.USB}</p>
-                <p><span>Wlan</span>: ${details.others.WLAN}</p>
+                <p><span>Bluetooth</span>: ${details?.others?.Bluetooth}</p>
+                <p><span>GPS</span>: ${details?.others?.GPS}</p>
+                <p><span>NFC</span>: ${details?.others?.NFC}</p>
+                <p><span>Radio</span>: ${details?.others?.Radio}</p>
+                <p><span>USB</span>: ${details?.others?.USB}</p>
+                <p><span>Wlan</span>: ${details?.others?.WLAN}</p>
                 
             </div>
     `
+
+
 }
