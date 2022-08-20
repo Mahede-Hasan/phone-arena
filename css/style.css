@@ -1,0 +1,53 @@
+#phones {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 20px;
+}
+
+.card {
+    width: 300px !important;
+    margin: auto;
+    margin-bottom: 10px;
+    height: 500px;
+}
+
+.card:hover {
+    background-color: rgb(232, 233, 235);
+}
+
+.card img {
+    width: 190px;
+    height: 210px;
+    margin: 10px auto;
+}
+
+.details-button {
+    padding: 6px 14px;
+    background-color: rgb(36, 219, 243);
+    border: none;
+    border-radius: 5px;
+}
+
+#phone-detail {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 0 auto;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+.details-div img {
+    margin-top: 40px;
+    padding-left: 100px;
+    width: 80%;
+    height: 350px;
+}
+
+.details-text {
+    padding-left: 60px;
+}
+
+span {
+    color: blue;
+}
