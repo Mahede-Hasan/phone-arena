@@ -16,24 +16,35 @@ document.getElementById('search-button').addEventListener('click', () => {
 
 // display show data
 const displayData = phones => {
-    // console.log(phones)
     const phonesDiv = document.getElementById('phones');
     phonesDiv.textContent = '';
-    phones.forEach(phone => {
+    if (phones.length === 0) {
         const div = document.createElement('div');
-        div.classList.add('col');
+        div.classList.add('no-found');
         div.innerHTML = `
-        <div class="card h-100">
-                <img src="${phone.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${phone.phone_name}</h5>
-                    <p class="card-text">The iPhone is a smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface.</p>
-                    <button class="details-button" onclick="phoneDetail('${phone.slug}')">Details</button>
-                </div>
-            </div>
+        <h1>Please write something</h1>
         `
         phonesDiv.appendChild(div)
-    })
+    }
+    else {
+        phones.forEach(phone => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+            <div class="card h-100">
+                    <img src="${phone.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${phone.phone_name}</h5>
+                        <p class="card-text">The iPhone is a smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface.</p>
+                        <button class="details-button" onclick="phoneDetail('${phone.slug}')">Details</button>
+                    </div>
+                </div>
+            `
+            phonesDiv.appendChild(div)
+        })
+    }
+
+
+
 }
 
 // get details phone
