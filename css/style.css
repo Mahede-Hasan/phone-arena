@@ -55,3 +55,27 @@ body {
 span {
     color: blue;
 }
+
+/* responsive */
+@media only screen and (max-width: 767px) {
+    #phones {
+        margin-top: 20px;
+        margin-right: 40px;
+        display: block;
+    }
+
+    #phone-detail {
+        display: block;
+        margin: 0 auto;
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .details-div img {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-left: 130px;
+        width: 70%;
+        height: 250px;
+    }
+}
