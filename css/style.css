@@ -26,6 +26,11 @@ body {
     margin: 10px auto;
 }
 
+.error-msg {
+    text-align: center;
+    color: red;
+}
+
 .details-button {
     padding: 6px 14px;
     background-color: rgb(36, 219, 243);

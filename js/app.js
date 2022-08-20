@@ -1,7 +1,7 @@
 // get phone data
 document.getElementById('search-button').addEventListener('click', () => {
     const inputField = document.getElementById('search-field');
-    const getInputText = inputField.value;
+    let getInputText = inputField.value;
 
     // clear input field
     inputField.value = '';
@@ -19,12 +19,13 @@ const displayData = phones => {
     const phonesDiv = document.getElementById('phones');
     phonesDiv.textContent = '';
     if (phones.length === 0) {
-        const div = document.createElement('div');
-        div.classList.add('no-found');
-        div.innerHTML = `
-        <h1>Please write something</h1>
-        `
-        phonesDiv.appendChild(div)
+        const errMsg = document.getElementById('phones-area')
+        const msg = document.createElement('h1');
+        msg.classList.add('error-msg')
+        msg.innerText = ' Please write something'
+        errMsg.appendChild(msg)
+
+
     }
     else {
         phones.forEach(phone => {
