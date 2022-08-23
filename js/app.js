@@ -1,5 +1,6 @@
 // get phone data
 document.getElementById('search-button').addEventListener('click', () => {
+
     const inputField = document.getElementById('search-field');
     let getInputText = inputField.value;
 
@@ -11,21 +12,22 @@ document.getElementById('search-button').addEventListener('click', () => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayData(data.data))
-
+    document.getElementById('phone-detail').innerHTML = '';
 })
 
 // display show data
 const displayData = phones => {
     const phonesDiv = document.getElementById('phones');
-    phonesDiv.textContent = '';
+    phonesDiv.innerHTML = "";
+
+    // console.log(phones)
     if (phones.length === 0) {
         const errMsg = document.getElementById('phones-area')
+        errMsg.innerText = '';
         const msg = document.createElement('h1');
         msg.classList.add('error-msg')
-        msg.innerText = ' Please write something'
+        msg.innerText = ' Please write something.......'
         errMsg.appendChild(msg)
-
-
     }
     else {
         phones.forEach(phone => {
@@ -40,7 +42,7 @@ const displayData = phones => {
                     </div>
                 </div>
             `
-            phonesDiv.appendChild(div)
+            phonesDiv.appendChild(div);
         })
     }
 
@@ -59,12 +61,12 @@ const phoneDetail = getDetails => {
 // display details
 
 const displayDetails = details => {
-    console.log(details)
     const detailDiv = document.getElementById('phone-detail');
+    detailDiv.textContent = '';
     detailDiv.innerHTML = `
             <div class="details-div">
                 <img src="${details.image}" alt="">
-                
+
             </div>
             <div class="details-div details-text">
             <h2><span>Name</span>: ${details.name}</h2>
@@ -80,9 +82,10 @@ const displayDetails = details => {
                 <p><span>Radio</span>: ${details?.others?.Radio}</p>
                 <p><span>USB</span>: ${details?.others?.USB}</p>
                 <p><span>Wlan</span>: ${details?.others?.WLAN}</p>
-                
+
             </div>
     `
+
 
 
 }
